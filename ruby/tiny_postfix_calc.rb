@@ -14,7 +14,7 @@
 
 
 puts [].tap {|s|
-  a=ARGV.join(' ').scan(/-?\d+(?:\.\d+)?|[\+\-\*\/\(\)]/).reverse
+  a=ARGV.join(' ').scan(/-?\d+(?:\.\d+)?|[\+\-\*\/\%]/).reverse
   while(b=a.pop)
     s.push (Float(b) rescue s.pop(2).yield_self{|p| p[0].send b.to_sym, p[1]})
   end
